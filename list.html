@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delight Canteen Menu</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #fceabb, #f8b500);
+            color: #333;
+        }
+        header {
+            background-color: #ff7f50;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        .section {
+            padding: 20px;
+        }
+        h2 {
+            color: #d35400;
+            border-bottom: 2px solid #d35400;
+            padding-bottom: 5px;
+            margin-top: 40px;
+        }
+        label {
+            display: block;
+            margin: 8px 0;
+            font-size: 18px;
+        }
+        .cart-button {
+            margin-top: 30px;
+            display: block;
+            background: #d35400;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Delight Canteen Menu
+</header>
+
+<div class="section">
+
+    <!-- Beverages Section -->
+    <h2>Beverages</h2>
+
+    <h3>Coffee</h3>
+    <label><input type="checkbox" value="Cold Coffee" data-price="60" onclick="addToCart(this)"> Cold Coffee (₹60)</label>
+    <label><input type="checkbox" value="Hot Coffee" data-price="50" onclick="addToCart(this)"> Hot Coffee (₹50)</label>
+
+    <h3>Tea</h3>
+    <label><input type="checkbox" value="Tea" data-price="20" onclick="addToCart(this)"> Tea (₹20)</label>
+
+    <h3>Juices</h3>
+    <label><input type="checkbox" value="Apple Juice" data-price="40" onclick="addToCart(this)"> Apple Juice (₹40)</label>
+    <label><input type="checkbox" value="Watermelon Juice" data-price="50" onclick="addToCart(this)"> Watermelon Juice (₹50)</label>
+    <label><input type="checkbox" value="Mix Fruit Juice" data-price="55" onclick="addToCart(this)"> Mix Fruit Juice (₹55)</label>
+    <label><input type="checkbox" value="Orange Juice" data-price="40" onclick="addToCart(this)"> Orange Juice (₹40)</label>
+    <label><input type="checkbox" value="Pineapple Juice" data-price="45" onclick="addToCart(this)"> Pineapple Juice (₹45)</label>
+
+    <h3>Shakes</h3>
+    <label><input type="checkbox" value="Banana Shake" data-price="70" onclick="addToCart(this)"> Banana Shake (₹70)</label>
+    <label><input type="checkbox" value="Mango Shake" data-price="80" onclick="addToCart(this)"> Mango Shake (₹80)</label>
+    <label><input type="checkbox" value="Chikku Shake" data-price="75" onclick="addToCart(this)"> Chikku Shake (₹75)</label>
+    <label><input type="checkbox" value="Strawberry Shake" data-price="90" onclick="addToCart(this)"> Strawberry Shake (₹90)</label>
+
+    <!-- Street Style Section -->
+    <h2>Street Style</h2>
+
+    <label><input type="checkbox" value="Momos" data-price="80" onclick="addToCart(this)"> Momos (₹80)</label>
+    <label><input type="checkbox" value="Chaat Papdi" data-price="50" onclick="addToCart(this)"> Chaat Papdi (₹50)</label>
+    <label><input type="checkbox" value="Vada Pav" data-price="30" onclick="addToCart(this)"> Vada Pav (₹30)</label>
+    <label><input type="checkbox" value="Golgappe" data-price="40" onclick="addToCart(this)"> Golgappe (₹40)</label>
+
+    <!-- North Indian Section -->
+    <h2>North Indian</h2>
+
+    <label><input type="checkbox" value="Chole Bhature" data-price="120" onclick="addToCart(this)"> Chole Bhature (₹120)</label>
+    <label><input type="checkbox" value="Punjabi Thali" data-price="180" onclick="addToCart(this)"> Punjabi Thali (₹180)</label>
+    <label><input type="checkbox" value="Biryani" data-price="150" onclick="addToCart(this)"> Biryani (₹150)</label>
+
+    <!-- Snacks Section -->
+    <h2>Snacks</h2>
+
+    <label><input type="checkbox" value="Paneer Tikka" data-price="130" onclick="addToCart(this)"> Paneer Tikka (₹130)</label>
+    <label><input type="checkbox" value="Chaap" data-price="120" onclick="addToCart(this)"> Chaap (₹120)</label>
+    <label><input type="checkbox" value="Pakodas" data-price="60" onclick="addToCart(this)"> Pakodas (₹60)</label>
+    <label><input type="checkbox" value="Burger" data-price="70" onclick="addToCart(this)"> Burger (₹70)</label>
+    <label><input type="checkbox" value="Pizza" data-price="100" onclick="addToCart(this)"> Pizza (₹100)</label>
+
+</div>
+
+<!-- Proceed to Cart Button -->
+<a href="/cart" class="cart-button">Proceed to Cart</a>
+
+<script>
+    // Store selected items in localStorage
+    let selectedItems = [];
+
+    function addToCart(checkbox) {
+        const itemName = checkbox.value;
+        const itemPrice = checkbox.getAttribute("data-price");
+        
+        if (checkbox.checked) {
+            selectedItems.push({ name: itemName, price: itemPrice });
+        } else {
+            selectedItems = selectedItems.filter(item => item.name !== itemName);
+        }
+
+        // Save to localStorage
+        localStorage.setItem("cartItems", JSON.stringify(selectedItems));
+    }
+</script>
+
+</body>
+</html>
