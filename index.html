@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delight Canteen</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #dfdcd9, #ebdec4);
+            color: #333;
+        }
+        header {
+            background-color: #f5a555;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .section h2 {
+            color: #ff6347;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .gallery-item {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: 250px;
+            transition: transform 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .gallery-item p {
+            padding: 10px;
+            font-size: 18px;
+            background: #ffe4b5;
+            margin: 0;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ff7f50;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Delight Canteen
+</header>
+
+<div class="section">
+    <h2>Choose Your Category</h2>
+    <!-- Link to the full list page -->
+    <a href="/list">View Full List</a>
+
+    <div class="gallery">
+        <a href="/list#beverages" class="gallery-item">
+            <img src="https://static.vecteezy.com/system/resources/previews/026/500/574/non_2x/summer-refreshing-beverages-photo.jpg" alt="Beverages">
+            <p>Beverages</p>
+        </a>
+        <a href="/list#snacks" class="gallery-item">
+            <img src="https://static.vecteezy.com/system/resources/previews/019/023/604/non_2x/front-view-tasty-meat-burger-with-cheese-and-salad-free-photo.jpg" alt="Snacks">
+            <p>Snacks</p>
+        </a>
+        <a href="/list#north-indian" class="gallery-item">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiSLB7zfxFCFag7Pt9CHnH3wk61PILgDo5CCTxT01YjSmEKOVY6uskLp8qEnLi8sIsAAMBOWo4AGXHUavOeuWowkrR4u4QtSlryJKCwcR837ajLT906ZOcBhwQuomU453tC8azJe5SikPUleEkJhz-FmTQKa8frlxB7tir-_0V97PqF89QHvQfh5iNH/s16000/IMG_20220904_210330.jpg" alt="North Indian">
+            <p>North Indian</p>
+        </a>
+        <a href="/list#street-style" class="gallery-item">
+            <img src="https://www.thespruceeats.com/thmb/SvtF9xyLadccnSIb5ES4H7EOZPw=/2000x1500/filters:fill(auto,1)/Papdi-Chaat-5840a8eb5f9b5851e5d7c1ef.jpg" alt="Street Style">
+            <p>Street Style</p>
+        </a>
+        
+    </div>
+</div>
+
+<footer>
+    © 2025 Delight Canteen. All rights reserved.
+</footer>
+
+</body>
+</html>
